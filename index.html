@@ -1,0 +1,126 @@
+<!--
+	implementation of this video
+	http://www.youtube.com/watch?v=9NmTPSgQjDs
+	-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>dummy cursors password</title>
+
+	<style>
+::selection {
+ background: transparent;
+}
+
+	 .keypad{
+		 overflow: hidden;
+		 width:500px;
+		 height:700px;
+		 border: 2px solid red;
+
+
+		 cursor: none;
+	 }
+
+	 .num-table {
+		 width: 100%;
+		 height: 100%;
+	 }
+
+	 .num-table td{
+		 text-align: center;
+		 line-height: 100%;
+
+		 border: 1px solid black;
+	 }
+
+	 #password {
+		 font-size:40px;
+		 cursor: none;
+	 }
+
+		.my-cursor {
+			position: absolute;
+		}
+
+		.num {
+			cursor:none;
+		}
+.fake-real-cursor {
+	position: absolute;
+}
+.number-of-cursors {
+	width: 50px;
+}
+
+	</style>
+
+	<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/logic.js"></script>
+
+
+</head>
+<body>
+
+
+	<div class="keypad">
+		<img class="fake-real-cursor" src="images/Cursor arrow Aero.png">
+		<div class="cursor-layer"></div>
+		<table class="num-table">
+			<tr>
+				<td colspan="3" class="password-wrapper">
+					<input id="password" type="password" name="pwd">
+				</td>
+			</tr>
+			<tr>
+				<td class="num">7</td>
+				<td class="num">8</td>
+				<td class="num">9</td>
+			</tr>
+			<tr>
+				<td class="num">4</td>
+				<td class="num">5</td>
+				<td class="num">6</td>
+			</tr>
+			<tr>
+				<td class="num">1</td>
+				<td class="num">2</td>
+				<td class="num">3</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td class="num">0</td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
+	<div class="controls">
+		<div>Number Of cursors  <input type="text" value="5"  class="number-of-cursors"> </div>
+		<div>click "P" to show / hide password.</div>
+		<div>click "C" to clear password field.</div>
+	</div>
+
+
+
+	<script>
+
+
+		// end Globals
+
+		$(document).ready(function () {
+
+			var dc = new dummyCursors();
+			dc.init();
+
+		});
+
+
+
+	</script>
+
+</body>
+</html>
